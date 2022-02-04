@@ -1,0 +1,11 @@
+* {
+  font-family: sans-serif;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+}
+h1 {
+  text-align: center;
+}
