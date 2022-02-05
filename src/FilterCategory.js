@@ -6,12 +6,30 @@ function FilterCategory(props) {
   const [filter, setFilter] = React.useState('');
 
   const filtered = patientsArray
-    .filter((f) => f[3].includes(filter) || filter.category === '')
-    .map((f) => <li key={f}>{f}</li>);
+    .filter((f) => f[3].includes(filter))
+    .map((f) => (
+      <li key={f}>
+        Treatment ID: {f[0]}
+        <br />
+        Treatment Course ID: {f[1]}
+        <br />
+        Type: {f[2]}
+        <br />
+        Category: {f[3]}
+        <br />
+        Name: {f[4]}
+        <br />
+        Date: {f[7]}
+        <br />
+        Prescription:
+        <span style={{ color: 'blue', fontWeight: 'bold' }}>{f[5]}</span>
+        <br />
+        Allergy:<span style={{ color: 'red', fontWeight: 'bold' }}>{f[6]}</span>
+      </li>
+    ));
 
   return (
     <div>
-      {patientsArray}
       <p>Filter patient based on the category:</p>
       <input
         id="filter"

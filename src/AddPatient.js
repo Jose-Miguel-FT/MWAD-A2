@@ -110,11 +110,6 @@ function AddPatient() {
       <button onClick={addPatient}> ADD PATIENT </button>
       <SectionBreak />
       <FilterCategory string={jsonData}/>
-      <SectionBreak />
-      <p>
-        List of patients:
-      </p>
-      {listOfPatients}
     </div>
   );
 }
