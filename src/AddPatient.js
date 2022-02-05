@@ -8,6 +8,8 @@ function AddPatient() {
   const [type, setType] = React.useState('');
   const [category, setCategory] = React.useState('');
   const [name, setName] = React.useState('');
+  const [prescription, setPrescription] = React.useState('');
+  const [allergy, setAllergy] = React.useState('');
   const [startDate, setStartDate] = React.useState('');
   const [newPatientsArray, setNewPatientsArray] = React.useState([]);
 
@@ -15,7 +17,7 @@ function AddPatient() {
   const addPatient = () => {
     setNewPatientsArray([
       ...newPatientsArray,
-      [treatId, treatCourseId, type, category, name, startDate],
+      [treatId, treatCourseId, type, category, name, prescription, allergy, startDate]
     ]);
   };
 
@@ -25,7 +27,7 @@ function AddPatient() {
 
   // This is just to show the list of added patients.
   const listOfPatients = newPatientsArray.map((patientItem) => {
-    const [treatId, treatCourseId, type, category, name, startDate] =
+    const [treatId, treatCourseId, type, category, name, prescription, allergy, startDate] =
       patientItem;
     return (
       <ul>
@@ -40,6 +42,10 @@ function AddPatient() {
           <br />
           Name: {name}
           <br />
+          Prescription: {prescription}
+          <br />
+          Allergy: {allergy}
+          <br />
           Start Date: {startDate}
         </li>
       </ul>
@@ -49,8 +55,6 @@ function AddPatient() {
   // Boxes to write the input of the new patients.
   return (
     <div>
-        <br />
-        <br />
         <br />
         <br />
       <p>
@@ -97,6 +101,22 @@ function AddPatient() {
       <br />
       <br />
       <input
+        placeholder="Prescription"
+        type="text"
+        value={prescription}
+        onChange={(event) => setPrescription(event.target.value)}
+      />
+      <br />
+      <br />
+      <input
+        placeholder="Allergy"
+        type="text"
+        value={allergy}
+        onChange={(event) => setAllergy(event.target.value)}
+      />
+      <br />
+      <br />
+      <input
         placeholder="Start Date"
         type="date"
         value={startDate}
@@ -106,8 +126,6 @@ function AddPatient() {
       <br />
       <button onClick={addPatient}> ADD PATIENT </button>
       <FilterCategory string={jsonData}/>
-      <br />
-      <br />
       <br />
       <br />
       <p>
