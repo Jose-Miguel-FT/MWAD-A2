@@ -19,12 +19,12 @@ function FilterCategory(props) {
         <br />
         Name: {f[4]}
         <br />
-        Date: {f[7]}
-        <br />
         Prescription:
-        <span style={{ color: 'blue', fontWeight: 'bold' }}>{f[5]}</span>
+        <span className="prescription">{f[5]}</span>
         <br />
-        Allergy:<span style={{ color: 'red', fontWeight: 'bold' }}>{f[6]}</span>
+        Allergy:<span className="allergy">{f[6]}</span>
+        <br />
+        Date: {f[7]}
       </li>
     ));
 
@@ -38,7 +38,7 @@ function FilterCategory(props) {
         value={filter}
         onChange={(event) => setFilter(event.target.value)}
       />
-      <ul>{filtered}</ul>
+      <ul className="filteredList">{filtered}</ul>
     </div>
   );
 }
