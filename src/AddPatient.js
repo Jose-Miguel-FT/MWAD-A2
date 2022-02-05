@@ -1,5 +1,6 @@
 import React from 'react';
 import FilterCategory from './FilterCategory';
+import SectionBreak from './SectionBreak';
 
 function AddPatient() {
   // React hooks to input new patients.
@@ -55,8 +56,6 @@ function AddPatient() {
   // Boxes to write the input of the new patients.
   return (
     <div>
-        <br />
-        <br />
       <p>
         Add patient form:
       </p>
@@ -66,68 +65,52 @@ function AddPatient() {
         value={treatId}
         onChange={(event) => setTreatId(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Treatment Course ID"
         type="text"
         value={treatCourseId}
         onChange={(event) => setTreatCourseId(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Type"
         type="text"
         value={type}
         onChange={(event) => setType(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Category"
         type="text"
         value={category}
         onChange={(event) => setCategory(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Name"
         type="text"
         value={name}
         onChange={(event) => setName(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Prescription"
         type="text"
         value={prescription}
         onChange={(event) => setPrescription(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Allergy"
         type="text"
         value={allergy}
         onChange={(event) => setAllergy(event.target.value)}
       />
-      <br />
-      <br />
       <input
         placeholder="Start Date"
         type="date"
         value={startDate}
         onChange={(event) => setStartDate(event.target.value)}
       />
-      <br />
-      <br />
       <button onClick={addPatient}> ADD PATIENT </button>
+      <SectionBreak />
       <FilterCategory string={jsonData}/>
-      <br />
-      <br />
+      <SectionBreak />
       <p>
         List of patients:
       </p>
